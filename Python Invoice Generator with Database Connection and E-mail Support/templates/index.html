@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" id="formtest">
+    <h1 class="bg-danger" align="center">Invoice Generator</h1><br><br>
+
+    <div class="alert alert-success" id="alert" hidden>
+        <strong>Success!</strong>
+    </div>
+
+    <form class="form-horizontal" id="form" method="post">
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Company Name:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="CompanyName" name="CompanyName" placeholder="Enter Company Name">
+        </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-4" >Company Address:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="CompanyAddress" name="CompanyAddress" placeholder="Enter Company Address">
+        </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="E-mailId">Email address:</label>
+        <div class="col-sm-8">
+            <input type="email" class="form-control" id="E-mailId" name="E-mailId" placeholder="Enter email">
+        </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-4" >Product Name:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="Product" name="Product" placeholder="Enter Product Name">
+        </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Amount:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="Amount" name="Amount" placeholder="Enter Amount">
+        </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Service tax:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="STax" name="STax" placeholder="Enter Service Tax to be applied"><br><br>
+        </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12" align="center">
+                <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+
+    $("#submit").click(function() {
+        $(".form1").submit();
+        var companyname = $("#CompanyName").val();
+        var companyaddress = $("#CompanyAddress").val();
+        var emailid = $("#E-mailId").val();
+        var product = $("#Product").val();
+        var amount = $("#Amount").val();
+        var stax = $("#STax").val();
+        var form_data = new FormData();
+        form_data.append('CompanyName', companyname);
+        form_data.append('CompanyAddress', companyaddress);
+        form_data.append('E-mailId', emailid);
+        form_data.append('Product', product);
+        form_data.append('Amount', amount);
+        form_data.append('STax', stax);
+    });
+</script>
+</html>
